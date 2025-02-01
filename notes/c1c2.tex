@@ -1,0 +1,220 @@
+\documentclass{article}
+
+\usepackage[english]{babel}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{lipsum}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstdefinelanguage{JavaScript}{
+  keywords={let, typeof, new, true, false, catch, function, return, null, catch, switch, var, if, in, while, do, else, case, break},
+  keywordstyle=\color{blue}\bfseries,
+  ndkeywords={class, export, boolean, throw, implements, import, this},
+  ndkeywordstyle=\color{darkgray}\bfseries,
+  identifierstyle=\color{black},
+  sensitive=false,
+  comment=[l]{//},
+  morecomment=[s]{/*}{*/},
+  commentstyle=\color{purple}\ttfamily,
+  stringstyle=\color{red}\ttfamily,
+  morestring=[b]',
+  morestring=[b]'
+}
+
+\lstset{frame=tb,
+  language=JavaScript,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
+
+% Remember to update
+\title{Week 1 Notes: JavaScript Basics}
+\date{}
+\author{Ross Emile Aparece}
+
+\begin{document}
+\maketitle
+
+% Remember to update
+\section*{Class 1 \\ 01/28/2025}\label{sec:Class 1}
+
+\pagebreak
+\section*{Class 2 \\ 01/30/2025}\label{sec:Class 2}
+\begin{itemize}
+  \item JavaScript is backwards compatible, have to live with the mistakes in all previouse versions
+  \item JavaScript interpreter is convienent for prototyping
+  \item console.log();
+    \begin{lstlisting}
+      console.log("Hello World!");
+      //prints "Hello World!"
+      console.log(5 > 2);
+      //prints true
+    \end{lstlisting}
+    \begin{itemize}
+      \item For arrays JS will return the size of the array and the contents of the array
+    \end{itemize}
+  \item console.table();
+    \begin{itemize}
+      \item returns an xy-table for the array
+    \end{itemize}
+  \item Data Types: Primitives and objects
+    \begin{itemize}
+      \item 7 Primitives; everything else is an objects
+      \begin{itemize}
+        \item number (64 bit IEEE 754 double precision)
+        \begin{itemize}
+          \item Range: \(10^{127}\) to \(1/10^{127}\)
+          \item Loses precision: \(0.1 + 0.2 = 0.30000000000000004\)
+          \item Better to avoid using number and stick with int
+          \item Stay within max\_safe\_int and min\_safe\_int
+        \end{itemize}
+        \item string
+        \begin{itemize}
+          \item Same string as in Java  
+          \item Can use " \ " or ' \ '
+        \end{itemize}
+        \item boolean
+        \begin{itemize}
+          \item True/False
+        \end{itemize}
+        \item undefined
+        \item null
+        \begin{itemize}
+          \item Similar to undefined but can tell apart
+          \item Undefined when you declare a variable but not assign a value
+          \item Null is an explicit declaration that a value does not exist
+          \item Undefined represent a temporary value
+        \end{itemize}
+        \item Symbol (Not discussed)
+        \begin{itemize}
+          \item Used for complete uniqueness, ex.\ primary keys
+        \end{itemize}
+        \item BigInt (Not discussed)
+        \begin{itemize}
+          \item Used for arbitrarily large numbers
+        \end{itemize}
+      \end{itemize}
+      \item Primitives cannot be decomposed but objects can
+      \item Objects:
+      \begin{itemize}
+        \item arrays
+        \begin{itemize}
+          \item Objects with numerical indeces
+        \end{itemize}
+        \item functions
+        \begin{itemize}
+          \item First class variables
+          \item Treated no different than any other data type
+        \end{itemize}
+        \item date/times
+      \end{itemize}
+    \end{itemize}
+    \item JavaScript uses syntactic sugar
+    \begin{itemize}
+      \item Object Wrapper
+      \begin{itemize}
+        \item All primitivies have a mirrored object versions
+        \item JavaScript will casts the primitive to its equivalent object version
+      \end{itemize}
+    \end{itemize}
+    \item There are 3 ways to declare functions
+    \begin{itemize}
+      \item Function Declaration
+      \begin{lstlisting}
+        function sum(a,b){
+          return a+b;
+        }
+        sum(3,5);
+        //returns 8
+      \end{lstlisting}
+      \item Function Expression
+      \begin{lstlisting}
+        let sum = function add_two(a,b){
+          return a + b;
+        }
+        sum(10,10);
+        //returns 20
+      \end{lstlisting}
+      \item Arrow Functions
+      \begin{itemize}
+        \item If a function can be represented in a single line use arrow functions
+        \item Intoduced in 2015 to shorten function expressions
+      \end{itemize}
+      \begin{lstlisting}
+        let sum = (a,b) => a + b;
+        sum(16, 8);
+        //returns 24
+      \end{lstlisting}
+      \begin{itemize}
+        \item If single parameter you can skip the parenthesis
+      \end{itemize}
+      \begin{lstlisting}
+        let sq = x => x * x;
+        sum(5, 5);
+        //returns 25
+      \end{lstlisting}
+      \begin{itemize}
+        \item If zero parameters the () must be brought back
+      \end{itemize}
+      \begin{lstlisting}
+        let hello = () => 'hello';
+        hello();
+        //returns hello
+      \end{lstlisting}
+      \begin{itemize}
+        \item Multiline arrow functions are not recommended to use
+        \begin{itemize}
+          \item Brings back curly braces and the return statement, losing a lot of the usefulness of an arrow function
+        \end{itemize}
+      \end{itemize}
+      \begin{lstlisting}
+        let sum_of_square = (a,b) => {
+          let aa = aa;
+          let bb = bb;
+          return aa + bb;
+      };
+      \end{lstlisting}
+    \end{itemize}
+
+    \item Constructor Functions
+    \begin{itemize}
+      \item Input number i: 6
+      \item Output object employee\{eid:i\}
+    \end{itemize}
+    \begin{lstlisting}
+      function new_emp(i){
+        return {eid:i};
+      }
+      new_emp(5);
+      //returns eid:5
+
+      let new_emp_arr = (i) => {eid:i};
+      //returns undefined
+    \end{lstlisting}
+    \begin{itemize}
+      \item Undefined so we have no idea whats wrongs
+      \item Returns undefined ebcause it matches it with a multiline arrow function
+      \item Solution:
+    \end{itemize}
+    \begin{lstlisting}
+      let new_emp_a = (i) => ({eid:i});
+      new_emp_a(7);
+    \end{lstlisting}
+\end{itemize}
+\end{document}
+
+
