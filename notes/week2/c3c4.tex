@@ -1,0 +1,170 @@
+\documentclass{article}
+
+\usepackage[english]{babel}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{lipsum}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstdefinelanguage{JavaScript}{
+  keywords={let, typeof, new, true, false, catch, function, return, null, catch, switch, var, if, in, while, do, else, case, break},
+  keywordstyle=\color{blue}\bfseries,
+  ndkeywords={class, export, boolean, throw, implements, import, this},
+  ndkeywordstyle=\color{gray}\bfseries,
+  identifierstyle=\color{black},
+  sensitive=false,
+  comment=[l]{//},
+  morecomment=[s]{/*}{*/},
+  commentstyle=\color{purple}\ttfamily,
+  stringstyle=\color{red}\ttfamily,
+  morestring=[b]',
+  morestring=[b]'
+}
+
+\lstset{frame=tb,
+  language=JavaScript,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
+
+% Remember to update
+\title{Week 2 Notes}
+\date{}
+\author{Ross Emile Aparece}
+
+\begin{document}
+\maketitle
+
+% Remember to update
+\section*{Class 3 \\ 02/04/2025}\label{sec:Class 3}
+\begin{itemize}
+    \item Standard syntax for an object is key value pairs
+    \begin{lstlisting}
+        let myfrac = {num:1, den:4};
+    \end{lstlisting}
+    \item Keys can be any type of string value but there are restrictions
+    \item Do not need quotes for a property
+    \item Values can be any data type
+    \begin{lstlisting}
+        let myfrac = {
+            num:1, 
+            den:4, 
+            toDecimal: function(){return this.num / this.den}
+            };
+    \end{lstlisting}
+    \item Functions are called using ()
+    \begin{lstlisting}
+        myfrac.toDecimal;
+        returns f(){return this,num / this.den}
+
+        myfrac.toDecimal();
+        returns 0.25;
+    \end{lstlisting}
+    \item Deconstructing assignment
+    \begin{lstlisting}
+        let downloaded = {a:5, b:7, c:8, z:89};
+
+        console.log(b);
+        console.log(z);
+    \end{lstlisting}
+    \item Spread operator converst from container type to parameter list
+    \begin{lstlisting}
+        let arr1 = [1, 2, 3, 4 , 5];
+        let arr2 = [8, 9, 10]
+
+        [..arr1, 6, 7, ...arr2, 10, 11, 12,13]
+        returns (13) [1, 2, 3, 4, 5, 6, 7, 8, 9, 10 , 11, 12, 13]
+    \end{lstlisting}
+    \item Informally removes the outermost braces and turns it into a comma seperated list
+    \item Works with any container type, common use case:
+    \begin{lstlisting}
+        let downloaded = {a:5, b:7, c:8, z:89}
+        let augmenteded = {...downloaded, d:100}
+    \end{lstlisting}
+    \item Spread operator cannot be used anywhere
+    \begin{lstlisting}
+        ...arr1 
+        let arr1 = [1, 2, 3, 4 , 5];
+        let arr2 = [8, 9, 10]
+
+        //but this works:
+
+        [...arr1] 
+        let arr1 = [1, 2, 3, 4 , 5];
+        let arr2 = [8, 9, 10]
+    \end{lstlisting}
+    \begin{itemize}
+        \item Assume downloaded is a massive array
+    \end{itemize}
+    \begin{lstlisting}
+        Math.max(downloaded);
+        //Returns NaN because it wants a parameter list
+
+        Math.max(...downloaded);
+        //Converts the array to a parameter list allowing the function to work properly
+    \end{lstlisting}
+    \item Rest operator ... (Same symbol as spread operator)
+    \begin{itemize}
+        \item Context lets us determine the difference between the two
+    \end{itemize}
+    \item Converts from parameter list to array
+    \item Scenario: assume download is a massive array
+    \begin{lstlisting}
+        let download = [5, 6, 7, 8, 9, 10, 11];
+        let [first,second, ...r] = downloaded;
+
+        console.log(first);
+        console.log(second);
+
+        console.log(r);
+        //returns the array containing the rest of the numbers
+    \end{lstlisting}
+    \item Second use case:
+    \begin{lstlisting}
+        //Use a rest operator for an infinite amount of numberes
+        function myMax(...n){
+            let max_candidate = n[0];
+            for(let i = 1; i < n.length; i++){
+                if(n[i]< nax_candidate){
+                    max_candidate = n[i];
+                }
+            }
+            return max_candidate;
+        }
+
+        myMax(1, 2, 3, 4, 5, 6, 7, 8, 9);
+        //Should return 9;
+    \end{lstlisting}
+    \begin{itemize}
+        \item Allows a function to accept any amount of inputs
+    \end{itemize}
+    % Topic 2
+    \item Topic 2 start
+    \begin{lstlisting}
+        let n1;
+        n1 = 31;
+        let n2;
+        n2 = n1;
+        n1 = 32;
+        console.log(n2);
+    \end{lstlisting}
+\end{itemize}
+
+\section*{Class 4 \\ 02/06/2025}\label{sec:Class 4}
+
+
+\end{document}
