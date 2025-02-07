@@ -165,6 +165,271 @@
 \end{itemize}
 
 \section*{Class 4 \\ 02/06/2025}\label{sec:Class 4}
-
-
+\begin{itemize}
+    \item Shallow Copy example 2
+    \begin{lstlisting}
+        let f1 = {num: 3, den: 4, inverse:{num:4, den:3}}
+        let f2 = {...f1};
+        f1.num = 1;
+        f1.den = 2;
+        f1.inverse.num = 2;
+        f1.inverse.den = 1;
+        
+        console.log(f2);
+        //returns 3/4 and 2/1
+    \end{lstlisting}
+    \begin{itemize}
+        \item We want 3/4 and 4/3
+        \item Not a true copy hence SHALLOW copy
+    \end{itemize}
+    \item True copy
+    \begin{lstlisting}
+        let f2 = structuredClone{1};
+    \end{lstlisting}
+    \begin{itemize}
+        \item structuredClone should be used in the server environment
+        \item However not every browser supports structureClone
+    \end{itemize}
+    \item How do we target browsers on an older version?
+    \begin{lstlisting}
+        let f2 = JSON.parse(JSON.stringify(f1));
+    \end{lstlisting}
+    \begin{itemize}
+        \item Converts object to a JSON string and converts it back into an object
+        \item Useful to target legacy systems
+        \item Doesn't preserve a lot of data types
+        \begin{itemize}
+            \item Functions may be dropped
+            \item Complex data types may be dropped
+        \end{itemize}
+    \end{itemize}
+    \item Scopes:
+    \begin{itemize}
+        \item Global scope, function scope, block scope
+        \item Lexical scope 
+        \item Module scope (not discusssed)
+    \end{itemize}
+    \item Lexical is more of theory than actual scope
+    \item Block scope will be used within this class
+    \item Global Scope:
+    \begin{itemize}
+        \item Not recommended due to namespace pollution
+        \item There is no global keyword
+    \end{itemize}
+    \begin{lstlisting}
+        function myscope(){
+            x = 5;
+        }
+        myscope();
+        console.log(x);
+    \end{lstlisting}
+    \begin{itemize}
+        \item x is a global variable in this scenario
+        \item Not using let, var, const makes the variable global
+    \end{itemize}
+    \begin{lstlisting}
+        function myscope(){
+            var x;
+            x = 5;
+        }
+        myscope();
+        console.log(x);
+    \end{lstlisting}
+    \begin{itemize}
+        \item First use of the variable decides if its global or not
+    \end{itemize}
+    \item Global variables are bad because namespace pollution where variable name is no longer available
+    \item Makes it hard to maintain even if you are working alone
+    \item There are some specific usecases: building a language, building a library, etc.
+    \begin{itemize}
+        \item If you are building for a developer and not an end user
+    \end{itemize}
+    \item Function Scope:
+    \begin{itemize}
+        \item Exists anywhere within the function
+    \end{itemize}
+    \begin{lstlisting}
+        function myscope(){
+            var x = 5;
+        }
+        myscope();
+        console.log(x);
+        //prints out undefined
+    \end{lstlisting}
+    \begin{lstlisting}
+        function myscope(){
+            console.log(x);
+            var x = 5;
+        }
+        myscope();
+    \end{lstlisting}
+    \begin{lstlisting}
+        function myscope(){
+            console.log(x);
+            //var x = 5;
+        }
+        myscope();
+    \end{lstlisting}
+    \begin{lstlisting}
+        function myscope(){
+            if (false) {
+                var x = 5;
+            }
+            console.log(x);
+        }
+        myscope();
+        //prints out undefined
+    \end{lstlisting}
+    \begin{lstlisting}
+        function myscope(){
+            if (false) {
+                //var x = 5;
+            }
+            console.log(x);
+        }
+        myscope();
+        //doesnt work
+    \end{lstlisting}
+    \begin{itemize}
+        \item Variables defined in function scope have preprocessing 
+        \item Moves the declaration to the top of the function
+        \item The variable is accessable anywhere within the function
+    \end{itemize}
+    \item Block Scope (Recommended):
+    \begin{itemize}
+        \item Using let or const
+    \end{itemize}
+    \begin{lstlisting}
+        function myscope(){
+            if (true) {
+                let var x = 5;
+            }
+            console.log(x);
+            //x cannot be accessed outside the braces 
+        }
+        myscope();
+    \end{lstlisting}
+    \begin{itemize}
+        \item Scoped within the braces 
+        \item No hoisting at all
+    \end{itemize}
+    \begin{lstlisting}
+        function myscope(){
+            if (true) {
+                let var x = 5;
+                console.log(x);
+            }
+        }
+        myscope();
+    \end{lstlisting}
+    \begin{itemize}
+        \item You don't even need anything before braces
+    \end{itemize}
+    \begin{lstlisting}
+        {
+            let var x = 5;
+            console.log(x);
+        }
+    \end{lstlisting}
+    \begin{itemize}
+        \item Not a real use case
+    \end{itemize}
+    \item Lexical scope:
+    \begin{lstlisting}
+        function a(){
+            let data1 = 1;
+            function b(){
+                let data2 = 2;
+                function c() {
+                    let data3 = 3;
+                    console.log(data1, data2, data3);
+                }
+            c();
+            console.log(data1, data2);
+            }
+            b();
+        }
+        a();
+    \end{lstlisting}
+    \begin{itemize}
+        \item You can access the ancestors variables
+        \item Only works inner to outer
+    \end{itemize}
+    \item High Order Functions and Closures
+    \begin{itemize}
+        \item Either/or/and:
+        \begin{itemize}
+            \item Function that takes another function as an input
+            \item Function that returns a function as output
+        \end{itemize}
+        \item Most common is map function
+    \end{itemize}
+    \begin{lstlisting}
+        [1,2,3,4,5,6,7].map(someFunction);
+    \end{lstlisting}
+    \begin{itemize}
+        \item Maps the function to each element of the array and returns a new array with the function applied to the elements
+    \end{itemize}
+    \begin{lstlisting}
+        [1,2,3,4,5,6,7].map(x => x + 1);
+    \end{lstlisting}
+    \begin{itemize}
+        \item Returns an array with each element + 1
+        \item Create adder function
+    \end{itemize}
+    \begin{lstlisting}
+        function create_adder(x){
+            return function(y){
+                return x + y;
+            }
+        }
+        const add12 = create_adder(12);
+        add12(10);
+    \end{lstlisting}
+    \begin{lstlisting}
+        function create_adder(x){
+            return function(y){
+                return x + y;
+            }
+        }
+        const add5 = create_adder(5);
+        add12(100);
+    \end{lstlisting}
+    \begin{itemize}
+        \item Sends back a function that binds x and has a floating variable y that we set
+        \item We can have both a function that accepts a function as an input and returns a function as an output
+    \end{itemize}
+    \begin{lstlisting}
+        function outer(a){
+            let b = 20;
+            let unused = 50;
+            return function inner(c){
+                let d = 40;
+                return `${a}, ${b}, ${c}, ${d}`;
+            }
+        }
+        let i = outer(10);
+        let j = i(30);
+        console.log(j);
+    \end{lstlisting}
+    \begin{itemize}
+        \item Returns 10, 20, 30, 40
+        \item We are accessing something outer when we are no longer within that scope
+        \item Closure is the preservation of access to varaiable that another function (or block of code) depends on 
+        \begin{itemize}
+            \item Does not preserve the data
+        \end{itemize}
+    \end{itemize}
+    \begin{lstlisting}
+        return function inner(c){
+            let d = 40;
+            return `${a}, ${b}, ${c}, ${d}`;
+        }
+        Env:{a:0x03, b:0x05}
+        //environmental variables that lets us maintain access that allows us to break scope
+    \end{lstlisting}
+    \begin{itemize}
+        \item Closure ensures that the garbage collector does not delete those elements test
+    \end{itemize}
+\end{itemize}
 \end{document}

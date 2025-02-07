@@ -158,7 +158,13 @@ INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmtt9.tfm
 OUTPUT c3c4.pdf
 INPUT /var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm
+INPUT /usr/share/texlive/texmf-dist/tex/latex/base/ts1cmtt.fd
+INPUT /usr/share/texlive/texmf-dist/tex/latex/base/ts1cmtt.fd
+INPUT /usr/share/texlive/texmf-dist/tex/latex/base/ts1cmtt.fd
+INPUT /usr/share/texlive/texmf-dist/tex/latex/base/ts1cmtt.fd
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/tctt0900.tfm
 INPUT c3c4.aux
+INPUT /home/rossa/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/tctt0900.600pk
 INPUT /home/rossa/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600pk
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
