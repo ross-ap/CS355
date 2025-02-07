@@ -4,6 +4,8 @@
 \usepackage{listings}
 \usepackage{color}
 \usepackage{lipsum}
+\usepackage{soul}
+
 
 \definecolor{dkgreen}{rgb}{0,0.6,0}
 \definecolor{gray}{rgb}{0.5,0.5,0.5}
@@ -162,6 +164,16 @@
         n1 = 32;
         console.log(n2);
     \end{lstlisting}
+    \begin{center}
+        STACK
+    \begin{tabular}{|c|c|c|}
+        \hline ID & ADD & VAL  \\
+        \hline\hline
+        n1 & 0x01 & \st{undefined} \st{31} 32 \\
+        n2 & 0x02 & \st{undefined} 31 \\
+        \hline    
+    \end{tabular}
+    \end{center}
 \end{itemize}
 
 \section*{Class 4 \\ 02/06/2025}\label{sec:Class 4}
@@ -182,6 +194,26 @@
         \item We want 3/4 and 4/3
         \item Not a true copy hence SHALLOW copy
     \end{itemize}
+    \begin{center}
+        STACK
+        \begin{tabular}{|c|c|c|} \hline ID & ADD & VAL \\
+            \hline\hline 
+            f1 & 0x01 & \st{undefined} 0xA2 \\
+            f2 & 0x02 & \st{undefined} 0xA3  \\
+            \hline
+        \end{tabular}
+    \end{center}
+    \begin{center}
+        HEAP
+        \begin{tabular}{|c|c|}
+            \hline ADD & VAL \\
+            \hline\hline
+            0xA1 & \{num:\st{4} 2, den:\st{3} 1\} \\
+            0xA2 & \{num:\st{3} 1, den:\st{4} 2, inverse: 0xA1\} \\
+            0xA3 & \{num:3, den: 4, inverse: 0xA1\} \\
+            \hline
+        \end{tabular}
+    \end{center}
     \item True copy
     \begin{lstlisting}
         let f2 = structuredClone{1};
