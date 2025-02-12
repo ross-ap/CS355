@@ -1,9 +1,9 @@
-PWD /home/rossa/cs355/notes
+PWD /home/rossa/cs355/notes/week1
 INPUT /etc/texmf/web2c/texmf.cnf
 INPUT /usr/share/texmf/web2c/texmf.cnf
 INPUT /usr/share/texlive/texmf-dist/web2c/texmf.cnf
 INPUT /var/lib/texmf/web2c/pdftex/pdflatex.fmt
-INPUT /home/rossa/cs355/notes/c1c2.tex
+INPUT /home/rossa/cs355/notes/week1/c1c2.tex
 OUTPUT c1c2.log
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/article.cls

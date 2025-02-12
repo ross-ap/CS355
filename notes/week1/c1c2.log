@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2025.2.4)  4 FEB 2025 19:13
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2025.2.4)  11 FEB 2025 20:41
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/home/rossa/cs355/notes/c1c2.tex
-(/home/rossa/cs355/notes/c1c2.tex
+**/home/rossa/cs355/notes/week1/c1c2.tex
+(/home/rossa/cs355/notes/week1/c1c2.tex
 LaTeX2e <2021-11-15> patch level 1
 L3 programming layer <2022-01-21> (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2021/10/04 v1.4n Standard LaTeX document class
@@ -139,14 +139,14 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
  [4] (./c1c2.aux) ) 
 Here is how much of TeX's memory you used:
  4117 strings out of 480186
- 66147 string characters out of 5894356
- 489290 words of memory out of 5000000
+ 66165 string characters out of 5894356
+ 489284 words of memory out of 5000000
  22081 multiletter control sequences out of 15000+600000
  474008 words of font info for 44 fonts, out of 8000000 for 9000
  38 hyphenation exceptions out of 8191
- 68i,6n,77p,240b,1266s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 68i,6n,77p,246b,1266s stack positions out of 5000i,500n,10000p,200000b,80000s
  </home/rossa/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
-Output written on c1c2.pdf (4 pages, 107861 bytes).
+Output written on c1c2.pdf (4 pages, 107482 bytes).
 PDF statistics:
  69 PDF objects out of 1000 (max. 8388607)
  41 compressed objects within 1 object stream

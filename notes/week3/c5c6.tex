@@ -42,7 +42,7 @@
 }
 
 % Remember to update
-\title{Week 3 Notes}
+\title{Week 3: Asynchronous Programming}
 \date{}
 \author{Ross Emile Aparece}
 
@@ -51,10 +51,107 @@
 
 % Remember to update
 \section*{Class 5 \\ 02/11/2025}\label{sec:Class 5}
+\begin{lstlisting}
+    function not(boolean_func){
+        return function(...x){
+            return !boolean_func(...x);
+        }
+    }
+
+    let is_even = x -> x % 2 === 0;
+    let is_odd = not(is_even);
+\end{lstlisting}
+
+\begin{lstlisting}
+    {
+        //Loop A
+        let i;
+        for(i = 0; i < 10; i++){
+            void setTimeout(() -> console.log(i), 3000);
+        }
+        //after 3 seconds run the function that prints i
+        //prints 10 not 0 to 9
+    }
+
+    {
+        //Loop B
+        for(let i = 0; i < 10; i++){
+            void setTimeout(() -> console.log(i), 3000);
+        }
+        //Actually prints 0 to 9
+    }
+\end{lstlisting}
 \begin{itemize}
-    \item 
+    \item Inside asynchronous programming these two loops are not the same
+    \begin{itemize}
+        \item For loop B on the stack it redeclares i and is all done through closures
+    \end{itemize}
+    \begin{lstlisting}
+        //blocking 
+        x = download(File)
+
+        Use(x)
+
+        print(hello);
+    \end{lstlisting}
+    \item We have latency in the webdev environment which cannot be solved
+    \item print(hello) cannot be used until both x is done downloading and the Use function is done
+    \begin{lstlisting}
+        for(let i = 0; i < 5000000000000; i++){
+            //blank intentionally
+        }
+        console.log("Finished!");
+    \end{lstlisting}
+    \item JS is single threaded so it can only do one thing at once
+    \item Cannot interact with the webpage until the loop is done
+    \item User expects a multitask environment
+    \item Threaded model:
+    \begin{itemize}
+        \item Progrommer had a problem, so he used thread. Then hhade tprobwolems.
+    \end{itemize}
+    \item You dont get to tell the OS when a thread takes problem. Threads can run over each other.
+    \item Async Model:
+    \begin{itemize}
+        \item Under the hood threads are still used but we are not allowed to access them.
+        \item "I dont know how long this takes but when it finishes give v8 this callback function to run."
+    \end{itemize}
+    \begin{lstlisting}
+        asynchronous_task(...data, callback);
+    \end{lstlisting}
+    \item Async Architecture (Top Down)
+    \begin{itemize}
+        \item Node.js Application
+        \item Node.js API (JavaScript)
+        \item Node.js Bindings (JavaScript to C/C++) Node.js Library C/C++ Addons
+        \item V8 (JS Engine) LibUv(Library) c-ares llhttp / htpp-parser open-ssl zlib
+        \item OS
+    \end{itemize}
+    \item Battle tested applications written in c/c++ 
+    \item Bindings and C/C++ addons allows Node.js to be implemented on old proprietary programs
+    \item LibUv:
+    \begin{lstlisting}
+        \item Provides access to multithreaded capabilities
+    \end{lstlisting}
+    \begin{lstlisting}
+        //f01.txt
+        Hello World
+
+        //callback.js
+        const fs = require("fs");
+        fs.readFile("input/f01.txt", "utf8", do_after_reading);
+
+        function do_after_reading(err, data){
+            if(err){
+                console.log(`Error reading file`');
+            } else {
+                console.log(`Finished Reading File`', data.length);
+            }
+        }
+        console.log("Hello World");
+    \end{lstlisting}
 \end{itemize}
 
+\pagebreak
 \section*{Class 6 \\ 02/13/2025}\label{sec:Class 6}
 
 
