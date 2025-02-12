@@ -140,6 +140,7 @@
         const fs = require("fs");
         fs.readFile("input/f01.txt", "utf8", do_after_reading);
 
+        //err and data are output parameters for the callback function
         function do_after_reading(err, data){
             if(err){
                 console.log(`Error reading file`');
