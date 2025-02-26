@@ -108,8 +108,65 @@
         \item Simplex (unidirectionality)
         \item Duplex (biderectionality)
         \begin{itemize}
-            \item Full Duplex (send and recieve at the same time)
-            \item Half Duplex (send or recieve at any time, only recieve a single signal)
+            \item Full Duplex (send and receive at the same time)
+            \item Half Duplex (send or receive at any time only one receiver)
+        \end{itemize}
+        \item All cables can full duplex only restriction is cost
+        \item All wireless operate at half duplex
+        \item Modern devices operate at half duplex but extremely highspeed
+        \begin{itemize}
+            \item Operates on the scale of picoseconds
+        \end{itemize}
+        \item Feels like full duplex 
+    \end{itemize}
+    \item Hardware
+    \begin{itemize}
+        \item Each layer has a specific hardware devices
+        \item Network Hub (Physical Layer, Historical)
+        \begin{itemize}
+            \item Solve the limitation of the cable
+            \item Central hub that ideally connects all devices
+            \item Act as an n-dimensional cables
+            \item No CPU or memory, just a bunch of logic gates (reducing cost)
+            \item Duplicates signal and sends the signal to all ports
+            \item Problem arises when two or more devices send at the same time data easily corrupted
+            \begin{itemize}
+                \item This is called a collision domain
+                \item If there is more than one sender none of the messages get through
+            \end{itemize}
+            \item Cannot update the hub so you have to update all the devices connected
+            \item Carrier Sense Multiple Access
+            \begin{itemize}
+                \item Solves collission domain problem by sharing the network
+                \begin{lstlisting}
+                    function CSMA(message){
+                        while(receiving){
+                            wait();
+                        }
+                        send(message);
+                    }
+                \end{lstlisting}
+                \item Downgrades connection to half duplex 
+                \item Limitation is assuming everyone upgrading at the same time
+                \item Devices with CSMA and devices with no CSMA do not play well together
+                \item Device without CSMA can still corrupt transmitted data
+
+            \end{itemize}
+            \item CSMA With Collision Dection
+            \begin{lstlisting}
+                function CSMACD (message){
+                    for(i = 0; i < message.length; i++){
+                        while(receiving){
+                            wait();;
+                        }
+                        send(messaage[i]);
+                    }
+                }
+            \end{lstlisting}
+        \end{itemize}
+        \item Network Switch
+        \begin{itemize}
+            \item 
         \end{itemize}
     \end{itemize}
 \end{itemize}
