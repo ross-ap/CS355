@@ -1,8 +1,8 @@
 # Fdb version 3
-["pdflatex"] 1740532420 "/home/rossa/cs355/notes/week4/c7c8.tex" "c7c8.pdf" "c7c8" 1740532420
+["pdflatex"] 1740533294 "/home/rossa/cs355/notes/week4/c7c8.tex" "c7c8.pdf" "c7c8" 1740533294
   "/etc/texmf/web2c/texmf.cnf" 1695312309 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/home/rossa/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600pk" 1738714426 11524 71decec4a6bf8e38f2f33ba38a2812dd ""
-  "/home/rossa/cs355/notes/week4/c7c8.tex" 1740532419 2610 562e52cd649271b56231ab5ccf571934 ""
+  "/home/rossa/cs355/notes/week4/c7c8.tex" 1740533293 3877 9abcdfe00683fd62928f1d8c84871b2e ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm" 1136768653 1536 e07581a4bb3136ece9eeb4c3ffab8233 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm" 1136768653 1328 c834bbb027764024c09d3d2bf908b5f0 ""
@@ -44,8 +44,8 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1644012257 39432 7155514e09a3d69036fac785183a21c2 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1738714060 128028 f533b797fba58d231669ea19e894e23e ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1738714069 1456133 63957b47381ecf813a980680eaf2ba09 ""
-  "c7c8.aux" 1740532420 172 1f248f10d7106766ad7bd1803bfd0d2c "pdflatex"
-  "c7c8.tex" 1740532419 2610 562e52cd649271b56231ab5ccf571934 ""
+  "c7c8.aux" 1740533294 172 908c66a09fdef7256a5f6ac24d441247 "pdflatex"
+  "c7c8.tex" 1740533293 3877 9abcdfe00683fd62928f1d8c84871b2e ""
   (generated)
   "c7c8.aux"
   "c7c8.log"
