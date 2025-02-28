@@ -1,8 +1,8 @@
 # Fdb version 3
-["pdflatex"] 1740535754 "/home/rossa/cs355/notes/week4/c7c8.tex" "c7c8.pdf" "c7c8" 1740535754
+["pdflatex"] 1740709035 "/home/rossa/cs355/notes/week4/c7c8.tex" "c7c8.pdf" "c7c8" 1740709035
   "/etc/texmf/web2c/texmf.cnf" 1695312309 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/home/rossa/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600pk" 1738714426 11524 71decec4a6bf8e38f2f33ba38a2812dd ""
-  "/home/rossa/cs355/notes/week4/c7c8.tex" 1740535752 6369 f539232603e6aad2e2d34d15d3cec196 ""
+  "/home/rossa/cs355/notes/week4/c7c8.tex" 1740709034 10772 2e596f7b5387af7623a113903ca4e4b1 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm" 1136768653 1536 e07581a4bb3136ece9eeb4c3ffab8233 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm" 1136768653 1328 c834bbb027764024c09d3d2bf908b5f0 ""
@@ -24,6 +24,7 @@
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1248133631 35752 024fb6c41858982481f6968b5fc26508 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb" 1248133631 32722 d7379af29a190c3f453aba36302ff5a9 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb" 1248133631 32362 179c33bbf43f19adbb3825bb4e36e57a ""
+  "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb" 1248133631 32762 224316ccc9ad3ca0423a14971cfa7fc1 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb" 1248133631 29078 718ea4567ceff944262b0f5b0800e1d9 ""
   "/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii" 1461363279 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "/usr/share/texlive/texmf-dist/tex/generic/babel-english/english.ldf" 1496785618 7008 9ff5fdcc865b01beca2b0fe4a46231d4 ""
@@ -47,8 +48,8 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1644012257 39432 7155514e09a3d69036fac785183a21c2 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1738714060 128028 f533b797fba58d231669ea19e894e23e ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1738714069 1456133 63957b47381ecf813a980680eaf2ba09 ""
-  "c7c8.aux" 1740535754 172 844607765975aadeac8593ec8c96d3b3 "pdflatex"
-  "c7c8.tex" 1740535752 6369 f539232603e6aad2e2d34d15d3cec196 ""
+  "c7c8.aux" 1740709035 172 85df6368baf8ec052848d3d998ca1de2 "pdflatex"
+  "c7c8.tex" 1740709034 10772 2e596f7b5387af7623a113903ca4e4b1 ""
   (generated)
   "c7c8.aux"
   "c7c8.log"

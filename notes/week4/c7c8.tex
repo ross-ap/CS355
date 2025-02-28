@@ -172,6 +172,87 @@
 \end{itemize}
 
 \section*{Class 9 \\ 02/27/2025}\label{sec:Class 9}
-
+\begin{itemize}
+    \item Topic 6: Data Link Layer
+    \begin{itemize}
+        \item Translation from digital bits into physical bits
+        \item Hop to hop delivery between two directly connect adjacent nodes over a single transmission medium (can be wireless)
+        \item Addressing:
+        \begin{itemize}
+            \item How to distinguish between different devices
+            \item DLL (Data Link Layer): MAC Address
+            \begin{itemize}
+                \item A globally unique hardware identifier assigned to every network card
+                \item No two MAC addresses should be the same
+                \item 48 bits \(2^{48}\) = 281 trillion
+                \item ex. 6E-3F-BB-22-A0-0F (6 pairs of hexadecimal numbers)
+                \item First 3 pairs = Organizational Unique Identifier
+                \item Last 3 pairs = Network Interface Component/Card
+                \item MAC addresses managed by IEEE
+                \item First 3 pairs are  assigned to a company
+            \end{itemize}
+            \item You can change the MAC address but in 99\% it doesn't make sense
+            \item MAC address survive a single hop and only used to bring you one hop closer
+            \item Cannot fool anyone more than 1 hop away from you
+        \end{itemize}
+    \item Protocols
+    \begin{itemize}
+        \item 802.3 Ethernet (wired connections): simple header and data protocol
+        \item 802.11 WiFi (wireless): complex protocol
+        \begin{itemize}
+            \item Many (100s) of different types of messages
+        \end{itemize}
+        \item Underlying physical properties between the two are so different they need different protocols
+        \item Ex. ethernet cable you just need to plug in but for wireless you need to select the correct device and put in a password
+        \item Wireless needs a more complex protocol to accomodate its physical properties
+        \item Ethernet has a faster protocol focused on throughput 
+    \end{itemize}
+    \item What is provided by the header?
+    \begin{itemize}
+        \item Preamble = alternating set of 0 and 1 used to provide synchronization between sender and receiver 
+        \begin{itemize}
+            \item Devices operate at different speeds but need to communicate
+            \item SFD last byte of preamble contains a bunch of 1's to signal that the preamble is over
+        \end{itemize}
+        \item Destination MAC and Source MAC
+        \begin{itemize}
+            \item Lets us know who the sender is and who the receiver is 
+            \item Each number = number of bytes
+        \end{itemize}
+        \item EtherType
+        \begin{itemize}
+            \item Tells us the network protocol used in the payload, most common:
+            \item 0x0800 = IPv4
+            \item 0x86DD = IPv6
+            \item 0x0806 = ARP 
+            \item 0x8100 = IPv4 and 802.1Q
+        \end{itemize}
+        \item IPv4: mainly used in the US, we didn't make the IP address field large enough 
+        \item IPv6: used in addition, used in the rest of the world
+        \item ARP: used to translate IP to MAC address
+        \item IPv4 + 802.1Q: 802.1Q provides VLAN support 
+        \item Provides logical seperation of networks where you are phsyically conencted to other devices
+        \item Provides quality of service, refers to priority
+        \item Allows us to assign higher priority to different devices
+        \item Can make a difference in real time applications
+        \item CRC/FCS 
+        \begin{itemize}
+            \item Frame Check Sequence
+            \item Algorithm provides data integrity
+            \item Ability to detect when data is corrupted while in transit
+            \item Internally uses CRC32 hash algorithm to provide the property
+            \item Takes variable sized input, fed into hash algorithm, received fixed length digest
+        \end{itemize}
+        \item Interframe = ensures messages dont collide
+        \item Data Integrity vs Reliable delivery
+        \begin{itemize}
+            \item Data Integrity = Ability to detect when data is corrupted
+            \item Reliable delivery = Constantly redeliver message until it is delivered
+        \end{itemize}
+        \item Ethernet itself does not provide reliable delivery
+        \item Reliable delivery is not free, data integrity is more important
+    \end{itemize}
+    \end{itemize}
+\end{itemize}
 
 \end{document}
