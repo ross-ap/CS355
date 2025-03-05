@@ -1,0 +1,153 @@
+\documentclass{article}
+
+\usepackage[english]{babel}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{lipsum}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstdefinelanguage{JavaScript}{
+  keywords={let, typeof, new, true, false, catch, function, return, null, catch, switch, var, if, in, while, do, else, case, break},
+  keywordstyle=\color{blue}\bfseries,
+  ndkeywords={class, export, boolean, throw, implements, import, this},
+  ndkeywordstyle=\color{darkgray}\bfseries,
+  identifierstyle=\color{black},
+  sensitive=false,
+  comment=[l]{//},
+  morecomment=[s]{/*}{*/},
+  commentstyle=\color{purple}\ttfamily,
+  stringstyle=\color{red}\ttfamily,
+  morestring=[b]',
+  morestring=[b]'
+}
+
+\lstset{frame=tb,
+  language=JavaScript,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
+
+% Remember to update
+\title{Topic 5: Physical Layer}
+\date{}
+\begin{document}
+
+% Remember to update
+\section*{Class 10 \\ 03/04/2025}\label{sec:Class 10}
+DLL
+\begin{itemize}
+    \item  Hardware Device
+    \begin{itemize}
+        \item Network Switch
+        \item Act as an n-dimensional cable
+        \item Added a CPU and Memory
+    \end{itemize}
+    \item Network switch obseleted the network hub
+    \item Memory allows the network switch to queue up messages
+    \begin{itemize}
+        \item Ex. A and C try to send to D at the same time
+        \item A sends first and when done C starts sending
+        \item Can alternate the data 
+    \end{itemize}
+    \item Switch can detect the header and make the correct decisions
+    \item Switch is a passive device 
+    \begin{itemize}
+        \item Will not send messages out on its own
+        \item Only fowards messages out on behalf of other devices
+        \item How does the switch know about the topology of the network?
+        \begin{itemize}
+            \item Switch knows it is connected to something but doesn't know what they are 
+            \item Uses the Switch Device Discovery Algorithm
+        \end{itemize}
+    \end{itemize}
+\end{itemize}
+Switch Device Discovery Algorithm
+\begin{itemize}
+    \item Upon receiving a message, record {SRC MAX + PHYS PORT} into FIB 
+    \item Check {DEST MAC} for a matching record exists in FIB, FOWARDS message out on matching {PHYSICAL PORT} 
+    
+    else (if no record exists) fallback to hub mode, foward message to all other ports, except receiving port
+    \item Nothing else happens
+\end{itemize}
+FIB = Forwarding Information Base 
+\begin{itemize}
+    \item Over time the network switch learns where the devices are located and records their MAC addresses and their respective port
+    \item Will eventually map out the entire network
+\end{itemize}
+Switches do not have MAC addresses, doesn't need it. \\ 
+Cannot assume that the last device resides on the last port. \\
+Experiation field used to ensure that the memory is not monopolized by a MAC address that no longer exists. \\
+Header remains the same when transmitted through multiple switches. \\
+Two or more devices can be mapped to the same port. \\ \\
+WiFi
+\begin{itemize}
+    \item Ethernet has a simple data and header protocol
+    \item WiFi needs a complex protocol because of its physical properties
+    \item Most of the messages are helper messages that deal with encryption, ensuring that you can connect, etc.
+\end{itemize}
+3 Major Categories:
+\begin{itemize}
+    \item Management Frames
+    \item Control Frames
+    \item Data Frames (Traditional data and header)
+\end{itemize}
+Management Frame:
+\begin{itemize}
+    \item Connection and disconnection with a particular network
+    \item Beacon 
+    \begin{itemize}
+        \item Router constantly emits a beacon sending information for a device to connect
+    \end{itemize}
+    \item Probe
+    \begin{itemize}
+        \item Probing for a network that was connected to previously, to reconnect to it
+    \end{itemize}
+    \item Authentication
+    \item Association
+    \begin{itemize}
+        \item After connection, allows us to interact with the network to get network resources or provide resources to other devices through the network
+    \end{itemize}
+\end{itemize}
+Control Frames
+\begin{itemize}
+    \item Deals with the lossy nature of WiFi
+    \item Acknowledgement
+    \begin{itemize}
+        \item WiFi does provides reliable delivery 
+        \item Sends an acknowledgement message
+        \item If ethernet sends an acknowledgement the time it would take would double
+    \end{itemize}
+    \item Block Ack 
+    \begin{itemize}
+        \item Acknowledge multiple messages with a single acknowledgement
+    \end{itemize}
+    \item RTS + CTS 
+    \begin{itemize}
+        \item Request to send, clear to send
+        \item Solves hidden node problem
+        \item Ugly solution in contrast to CSMA
+        \begin{itemize}
+            \item Sender sends request to send 
+            \item Receiver sends clear to send 
+            \begin{itemize}
+                \item Signals to devices outside of the senders range to wait and switch to RTC + CTS
+            \end{itemize}
+            \item CSMA is faster, the extra messages cost bandwith and doesn't send actual data 
+        \end{itemize}
+    \end{itemize}
+\end{itemize}
+\end{document}
