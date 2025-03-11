@@ -1,0 +1,5 @@
+17.253.144.10 	 apple.com
+142.250.80.110 	 google.com
+162.159.135.232 	 discord.com
+140.82.112.3 	 github.com
+3.225.92.8 	 netflix.com
