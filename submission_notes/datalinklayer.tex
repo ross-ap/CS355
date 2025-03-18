@@ -1,0 +1,132 @@
+\documentclass{article}
+
+\usepackage[english]{babel}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{lipsum}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstdefinelanguage{JavaScript}{
+  keywords={let, typeof, new, true, false, catch, function, return, null, catch, switch, var, if, in, while, do, else, case, break},
+  keywordstyle=\color{blue}\bfseries,
+  ndkeywords={class, export, boolean, throw, implements, import, this},
+  ndkeywordstyle=\color{darkgray}\bfseries,
+  identifierstyle=\color{black},
+  sensitive=false,
+  comment=[l]{//},
+  morecomment=[s]{/*}{*/},
+  commentstyle=\color{purple}\ttfamily,
+  stringstyle=\color{red}\ttfamily,
+  morestring=[b]',
+  morestring=[b]'
+}
+
+\lstset{frame=tb,
+  language=JavaScript,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
+
+\begin{document}
+
+\section*{Topic 6: Data Link Layer}
+Converts digital bits to physical bits for hop-to-hop delivery over a single medium (wired/wireless) \\ \\
+Addressing:
+\begin{itemize}
+    \item Uses MAC address (48-bit globally unique identifier managed by IEEE)
+    \item Format: ex. 6E-3F-BB-22-A0-0F
+    \item First 3 pairs: Organizational Unique Identifier
+    \item Last 3 pairs: Network Interface Card
+    \item MAC addresses survive a single hop and can't be used to fool beyond one hop
+\end{itemize}
+
+Protocols:
+\begin{itemize}
+    \item 802.3 Ethernet (wired): simple header and data protocol
+    \item 802.11 WiFi (wireless): complex protocol with 100+ message types
+    \item Due to different physical properties, protocols differ (WiFi needs authentication, password, etc.)
+    \item Ethernet focuses on throughput; WiFi needs complexity for connection handling
+\end{itemize}
+
+Header Information:
+\begin{itemize}
+    \item Preamble: alternating 0s and 1s for synchronization between sender and reciever 
+    \item Destination and Source MAC addresses
+    \begin{itemize}
+        \item Lets us know who the sender/reciever is
+    \end{itemize}
+    \item EtherType: specifies protocol in payload
+    \begin{itemize}
+        \item 0x0800 = IPv4, 0x86DD = IPv6, 0x0806 = ARP, 0x8100 = VLAN tagged frame
+    \end{itemize}
+    \item CRC/FCS: uses CRC32 hash for data integrity
+    \item Interframe: prevents collisions
+    \item Integrity vs Reliable delivery
+    \begin{itemize}
+        \item Integrity: detect errors; Reliable delivery: ensure delivery via retransmissions
+        \item Ethernet provides integrity, not reliability
+    \end{itemize}
+\end{itemize}
+
+DLL Devices:
+\begin{itemize}
+    \item Network Switch (replaced hub):
+    \begin{itemize}
+        \item Adds CPU, memory for queuing messages
+        \item Switch = passive; forwards on behalf of devices
+        \item Uses Switch Device Discovery Algorithm:
+        \begin{itemize}
+            \item Records {SRC MAC + Physical Port} into FIB
+            \item If DEST MAC found in FIB, forward on that port
+            \item Else fallback to hub mode: forward to all except source port
+        \end{itemize}
+        \item FIB builds MAC-port mapping over time
+        \item Header stays unchanged across switches
+        \item Expiry field prevents memory monopolization
+        \item Multiple devices can map to one port
+    \end{itemize}
+\end{itemize}
+
+Management Frames:
+\begin{itemize}
+        \item Connection/disconnection, 
+        \item Beacon: Router constantly emits a beacon sending information for a device
+        to connect
+        \item Probe: Probing for a network that was connected to previously, to reconnect
+        to it
+        \item Association: allows us to interact with the network to get network resources or provide resources to other devices through the network
+    \end{itemize}
+    Control Frames:
+    \begin{itemize}
+        \item Deals with lossy nature of WiFi 
+        \item Acknowledgement: ensures reliable delivery (unlike Ethernet)
+        \item Block Ack: acknowledge multiple messages with a single acknowledgement
+        \item RTS/CTS: solves hidden node problem; signals other devices to hold transmission
+        \begin{itemize}
+            \item Ugly solution in contrast to CSMA
+            \item Sender sends request to send, Receiver sends clear to send
+            \item Signals to devices outside of the senders range to wait and
+            switch to RTC + CTS
+        \end{itemize}
+        \item Costly vs CSMA 
+        \begin{itemize}
+            \item CSMA is faster, the extra messages cost bandwith and doesn’t
+            send actual data
+        \end{itemize}
+    \end{itemize}
+
+\end{document}

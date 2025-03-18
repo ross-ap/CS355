@@ -1,0 +1,146 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2025.2.4)  18 MAR 2025 19:03
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**/home/rossa/cs355/submission_notes/datalinklayer.tex
+(/home/rossa/cs355/submission_notes/datalinklayer.tex
+LaTeX2e <2021-11-15> patch level 1
+L3 programming layer <2022-01-21> (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2021/10/04 v1.4n Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2021/10/04 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count185
+\c@section=\count186
+\c@subsection=\count187
+\c@subsubsection=\count188
+\c@paragraph=\count189
+\c@subparagraph=\count190
+\c@figure=\count191
+\c@table=\count192
+\abovecaptionskip=\skip47
+\belowcaptionskip=\skip48
+\bibindent=\dimen138
+) (/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
+Package: babel 2022/01/26 3.70 The Babel package
+\babel@savecnt=\count193
+\U@D=\dimen139
+\l@unhyphenated=\language6
+ (/usr/share/texlive/texmf-dist/tex/generic/babel/txtbabel.def)
+\bbl@readstream=\read2
+\bbl@dirlevel=\count194
+ (/usr/share/texlive/texmf-dist/tex/generic/babel-english/english.ldf
+Language: english 2017/06/06 v3.3r English support from the babel system
+Package babel Info: Hyphen rules for 'canadian' set to \l@english
+(babel)             (\language0). Reported on input line 102.
+Package babel Info: Hyphen rules for 'australian' set to \l@ukenglish
+(babel)             (\language4). Reported on input line 105.
+Package babel Info: Hyphen rules for 'newzealand' set to \l@ukenglish
+(babel)             (\language4). Reported on input line 108.
+)) (/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty (/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks16
+)
+\lst@mode=\count195
+\lst@gtempboxa=\box50
+\lst@token=\toks17
+\lst@length=\count196
+\lst@currlwidth=\dimen140
+\lst@column=\count197
+\lst@pos=\count198
+\lst@lostspace=\dimen141
+\lst@width=\dimen142
+\lst@newlines=\count199
+\lst@lineno=\count266
+\lst@maxwidth=\dimen143
+ (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
+\c@lstnumber=\count267
+\lst@skipnumbers=\count268
+\lst@framebox=\box51
+) (/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2020/03/24 1.8d listings configuration
+))
+Package: listings 2020/03/24 1.8d (Carsten Heinz)
+ (/usr/share/texlive/texmf-dist/tex/latex/graphics/color.sty
+Package: color 2021/12/07 v1.3c Standard LaTeX Color (DPC)
+ (/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package color Info: Driver file: pdftex.def on input line 149.
+ (/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2020/10/05 v1.2a Graphics/color driver for pdftex
+)) (/usr/share/texlive/texmf-dist/tex/latex/lipsum/lipsum.sty (/usr/share/texlive/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty (/usr/share/texlive/texmf-dist/tex/latex/l3kernel/expl3.sty
+Package: expl3 2022-01-21 L3 programming layer (loader) 
+ (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2022-01-12 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count269
+\l__pdf_internal_box=\box52
+))
+Package: l3keys2e 2022-01-12 LaTeX2e option processing using LaTeX3 keys
+)
+Package: lipsum 2021-09-20 v2.7 150 paragraphs of Lorem Ipsum dummy text
+\g__lipsum_par_int=\count270
+\l__lipsum_a_int=\count271
+\l__lipsum_b_int=\count272
+ (/usr/share/texlive/texmf-dist/tex/latex/lipsum/lipsum.ltd.tex)) (./datalinklayer.aux)
+\openout1 = `datalinklayer.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+\c@lstlisting=\count273
+ (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count274
+\scratchdimen=\dimen144
+\scratchbox=\box53
+\nofMPsegments=\count275
+\nofMParguments=\count276
+\everyMPshowfont=\toks18
+\MPscratchCnt=\count277
+\MPscratchDim=\dimen145
+\MPnumerator=\count278
+\makeMPintoPDFobject=\count279
+\everyMPtoPDFconversion=\toks19
+)
+Overfull \hbox (0.94507pt too wide) in paragraph at lines 47--49
+\OT1/cmr/m/n/10 Converts dig-i-tal bits to phys-i-cal bits for hop-to-hop de-liv-ery over a sin-gle medium
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 47--49
+
+ []
+
+[1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] (./datalinklayer.aux) ) 
+Here is how much of TeX's memory you used:
+ 3754 strings out of 480186
+ 63124 string characters out of 5894356
+ 457273 words of memory out of 5000000
+ 21731 multiletter control sequences out of 15000+600000
+ 470507 words of font info for 32 fonts, out of 8000000 for 9000
+ 38 hyphenation exceptions out of 8191
+ 68i,5n,77p,260b,262s stack positions out of 5000i,500n,10000p,200000b,80000s
+ </home/rossa/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb>
+Output written on datalinklayer.pdf (2 pages, 45750 bytes).
+PDF statistics:
+ 32 PDF objects out of 1000 (max. 8388607)
+ 19 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+
