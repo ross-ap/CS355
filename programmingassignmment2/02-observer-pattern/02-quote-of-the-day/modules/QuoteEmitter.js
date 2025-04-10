@@ -9,7 +9,13 @@ Comment (Required):
 */
 const EventEmitter = require('events');
 class QuoteEmitter extends EventEmitter {
-	
+	constructor({quotes, day_emitter} = spec){
+        super();
+        day_emitter.on("newday", ({mm, dd}) => {
+            let quote = quotes[Math.random() * quotes.length | 0];
+            this.emit("qotd", quote);
+        });
+    }
 	
 	
 }
