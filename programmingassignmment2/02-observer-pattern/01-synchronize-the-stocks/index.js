@@ -16,15 +16,25 @@ const day_emitter = new DayEmitter(2400);
 let portfolio = portfolio_data.map(stock => new Stock({...stock, day_emitter}));
 let current_line = portfolio.length + 1;
 
+let daily_stocks = [];
 portfolio.forEach(function(stock, index){
 	stock.on("newday", function({ticker, name, price, previous, change}){
-		process.stdout.cursorTo(0, index + 1);
-		process.stdout.clearLine();
+		daily_stocks.push({ticker, name, price, previous, change});
+		if (daily_stocks.length >= portfolio.length){
+			console.clear();
+			process.stdout.cursorTo(0, 1);
+			console.table(daily_stocks);
+			daily_stocks = [];
+		}
+
+
+	
 		
 		
-		console.log(`${ticker} ${name} ${price.toFixed(2)} ${change.toFixed(2)}`);
+		// console.log(`${ticker} ${name} ${price.toFixed(2)} ${change.toFixed(2)}`);
 		// On each newday console.log is called |portfolio.length| number of times.
 		// Replace all these calls with a single console.table
+		
 		
 		process.stdout.cursorTo(0, current_line);
 	});
