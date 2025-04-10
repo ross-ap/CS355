@@ -28,7 +28,7 @@ portfolio.forEach(function(stock, index){
 	});
 });
 
-
+stock_alerts.map(stock_alert => ((...stock_alert)))
 
 
 
